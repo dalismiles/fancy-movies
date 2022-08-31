@@ -3,14 +3,16 @@ import "./index.css";
 
 const TopRatedList = ({ cardData }) => {
   return (
-    <div className="TopRatedList">
-      {cardData.map((item, index) => (
-        <MainCard
-          cardData={item}
-          cardStyle={{ width: "400px", height: "150px", fontSize: "16px" }}
-          key={index}
-        />
-      ))}
+    <div className="TopRated__Container">
+      <div className="TopRated__List">
+        {cardData.map((item, index) => (
+          <MainCard
+            cardData={item}
+            cardStyle={{ width: "200px", height: "300px", fontSize: "16px" }}
+            key={index}
+          />
+        ))}
+      </div>
     </div>
   );
 };

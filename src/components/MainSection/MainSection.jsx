@@ -11,6 +11,8 @@ import "./index.css";
 const MainSection = () => {
   const [movieLists, setMovieLists] = useState({});
 
+  
+
   useEffect(() => {
     GET("movie", "popular", "&language=en-US&page=1").then((data) =>
       setMovieLists((prev) => ({ ...prev, popular: data.results }))
@@ -27,13 +29,34 @@ const MainSection = () => {
 
   return (
     <div className="MainSection">
-      {movieLists.popular && <MainCard cardData={movieLists.popular[0]} />}
-      {movieLists.topRated && (
-        <TopRatedList cardData={movieLists.topRated} nCards={10} />
-      )}
-      {movieLists.upcoming && (
-        <UpcomingList cardData={movieLists.upcoming} nCards={10} />
-      )}
+      <div className="MainSection__Card">
+        <p className="MainSection__text">top rated movie </p>
+        {movieLists.popular && (
+          <MainCard
+            cardData={movieLists.popular[0]}
+            className="MainSection__Card--maincard"
+          />
+        )}
+        
+      </div>
+      <div className="MainSection__Lists">
+        <p className="MainSection__text">top rated movies of the month</p>
+        {movieLists.topRated && (
+          <TopRatedList
+            cardData={movieLists.topRated}
+            nCards={10}
+            className="MainSection__Lists--topRated"
+          />
+        )}
+        <p className="MainSection__text">upcoming movies</p>
+        {movieLists.upcoming && (
+          <UpcomingList
+            cardData={movieLists.upcoming}
+            nCards={10}
+            className="MainSection__Lists--upcoming"
+          />
+        )}
+      </div>
     </div>
   );
 };

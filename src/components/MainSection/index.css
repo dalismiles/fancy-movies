@@ -1,7 +1,41 @@
 .MainSection {
-    border: 2px solid red;
-    padding: 63px;
-    display: flex;
-    background: rgb(180, 103, 4);
-    height: 100%;
-  }
+  padding: 50px;
+  display: flex;
+  gap: 15px;
+  height: 100%;
+  color: rgb(26, 0, 45);
+  background: rgb(203, 203, 203);
+}
+
+.MainSection__text {
+  margin: 0;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.MainSection__Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.MainSection__Lists {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 60%;
+}
+
+.MainSection__Lists--topRated {
+  display: flex;
+  flex-direction: row;
+}
+
+.MainSection__Lists--upcoming {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,8 +1,15 @@
-.TopRatedList {
+.TopRated__Container {
+  display: flex;
+  gap:20px;
+  height: 320px;
+  overflow-x: auto;
+}
+
+.TopRated__List {
+  margin: 10px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  width: 40%;
 }
