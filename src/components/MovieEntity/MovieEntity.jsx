@@ -46,5 +46,3 @@ const MovieEntity = ({ movieID }) => {
 };
 
 export default MovieEntity;
-
-

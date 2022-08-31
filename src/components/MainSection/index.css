@@ -1,0 +1,7 @@
+.MainSection {
+    border: 2px solid red;
+    padding: 63px;
+    display: flex;
+    background: rgb(180, 103, 4);
+    height: 100%;
+  }

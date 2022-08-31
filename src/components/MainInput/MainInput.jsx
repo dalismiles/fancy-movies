@@ -23,4 +23,3 @@ const MainInput = ({ setInputMovie }) => {
 };
 
 export default MainInput;
-
