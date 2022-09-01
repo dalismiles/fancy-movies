@@ -9,9 +9,13 @@ import { GET } from "../../utils/api";
 import "./index.css";
 
 const MainSection = () => {
-  const [movieLists, setMovieLists] = useState({});
+  const [movieLists, setMovieLists] = useState({
+    topRated: [{}],
+    popular: [{}],
+    upcomingList: [{}],
+  });
 
-  
+  const [filteredTopRated, setFilteredTopRated] = useState([]);
 
   useEffect(() => {
     GET("movie", "popular", "&language=en-US&page=1").then((data) =>
@@ -27,6 +31,12 @@ const MainSection = () => {
     );
   }, []);
 
+  useEffect(() => {
+    setFilteredTopRated(
+      movieLists.topRated.filter((movie) => movie.vote_average >= 8.6)
+    );
+  }, [movieLists.topRated]);
+
   return (
     <div className="MainSection">
       <div className="MainSection__Card">
@@ -37,13 +47,12 @@ const MainSection = () => {
             className="MainSection__Card--maincard"
           />
         )}
-        
       </div>
       <div className="MainSection__Lists">
         <p className="MainSection__text">top rated movies of the month</p>
         {movieLists.topRated && (
           <TopRatedList
-            cardData={movieLists.topRated}
+            cardData={filteredTopRated}
             nCards={10}
             className="MainSection__Lists--topRated"
           />

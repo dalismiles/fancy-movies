@@ -1,11 +1,20 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./index.css";
 
 const MainInput = ({ setInputMovie }) => {
   const inputRef = useRef(null);
 
+  const [isInputVisible, setInputVisibility] = useState(false);
+
   useEffect(() => {
-    inputRef.current.focus();
+    window.addEventListener("scroll", () =>
+      window.scrollY >= 900
+        ? setInputVisibility(true)
+        : setInputVisibility(false)
+    );
+
+    // console.log(inputRef.current.value)
+    // inputRef.current.focus()
   }, []);
 
   const onHandleSubmit = (e) => {
@@ -16,8 +25,12 @@ const MainInput = ({ setInputMovie }) => {
 
   return (
     <form className="MainInput" onSubmit={onHandleSubmit}>
-      <input ref={inputRef} type="text" />
-      <button type="submit">Search</button>
+      {isInputVisible && (
+        <>
+          <input ref={inputRef} type="text" />
+          <button type="submit">Search</button>
+        </>
+      )}
     </form>
   );
 };
