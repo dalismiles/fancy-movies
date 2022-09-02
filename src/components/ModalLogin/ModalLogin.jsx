@@ -14,13 +14,13 @@ const ModalLogin = ({ onHandleClick }) => {
     <div className="ModalLogin__overlay">
       <div className="ModalLogin">
         <form className="ModalLogin__form" onSubmit={onGetUsername}>
-          <h2 className="ModalLogin__typewriter">WELCOME to CB.04!</h2>
+          <h2 className="ModalLogin__typewriter">WELCOME to MOVIE DB!</h2>
+          <label htmlFor="">Type your name here and continue...</label>
           <input
             value={usernameInput}
             onChange={(e) => setUsernameInput(e.target.value)}
             className="ModalLogin__form--input"
             type="text"
-            placeholder="Type your name here and continue..."
             required
           />
           <Button

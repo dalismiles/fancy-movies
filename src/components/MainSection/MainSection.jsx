@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 
 import MainCard from "../MainCard";
 import TopRatedList from "../TopRatedList";
@@ -33,7 +33,7 @@ const MainSection = () => {
 
   useEffect(() => {
     setFilteredTopRated(
-      movieLists.topRated.filter((movie) => movie.vote_average >= 8.6)
+      movieLists.topRated.filter((movie) => movie.vote_average >= 8.5)
     );
   }, [movieLists.topRated]);
 
@@ -53,7 +53,7 @@ const MainSection = () => {
         {movieLists.topRated && (
           <TopRatedList
             cardData={filteredTopRated}
-            nCards={10}
+            nCards={8}
             className="MainSection__Lists--topRated"
           />
         )}
@@ -70,4 +70,4 @@ const MainSection = () => {
   );
 };
 
-export default MainSection;
+export default memo(MainSection);

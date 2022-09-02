@@ -70,7 +70,7 @@
   gap: 20px;
 }
 
-.ModalLogin__form--input {
+.ModalLogin__form input {
   padding: 10px 10px 10px 6px;
   width: 280px;
   border: 0;
@@ -79,3 +79,9 @@
   outline: none;
 }
 
+.ModalLogin__form label {
+  font-weight: lighter;
+  font-size: x-small;
+  align-self: flex-start;
+  margin-left: 25px;
+}
