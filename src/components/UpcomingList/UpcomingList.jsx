@@ -8,7 +8,7 @@ const UpcomingList = ({ cardData }) => {
         {cardData.map((item, index) => (
           <MainCard
             cardData={item}
-            cardStyle={{ width: "200px", height: "300px", fontSize: "16px" }}
+            cardStyle={{ width: "200px", height: "310px", fontSize: "16px" }}
             key={index}
           />
         ))}
