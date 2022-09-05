@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../Button";
-import "./index.css";
+import "./index.scss";
 
 const ModalLogin = ({ onHandleClick }) => {
   const [usernameInput, setUsernameInput] = useState("");
@@ -12,9 +12,14 @@ const ModalLogin = ({ onHandleClick }) => {
 
   return (
     <div className="ModalLogin__overlay">
-      <div className="ModalLogin">
-        <form className="ModalLogin__form" onSubmit={onGetUsername}>
-          <h2 className="ModalLogin__typewriter">WELCOME to MOVIE DB!</h2>
+      <div className="ModalLogin__overlay--content">
+        <h2 className="ModalLogin__overlay--content--typewriter">
+          WELCOME to MOVIE DB!
+        </h2>
+        <form
+          className="ModalLogin__overlay--content--form"
+          onSubmit={onGetUsername}
+        >
           <label htmlFor="">Type your name here and continue...</label>
           <input
             value={usernameInput}

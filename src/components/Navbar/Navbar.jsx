@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ModalLogin from "../ModalLogin";
-import "./index.css";
+import "./index.scss";
 
 const Navbar = () => {
   const [isModalVisible, setModalVisibility] = useState(false);

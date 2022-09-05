@@ -1,0 +1,59 @@
+@import "../../styles/_variables.scss";
+
+.Modal__overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-color: $modal-bg-color;
+
+  .Modal {
+    position: fixed;
+    width: 500px;
+    height: 800px;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 0 4px $modal-bg-color;
+    border-radius: 8px;
+    background: $third-color;
+    background: linear-gradient(0deg, $third-color 0%, rgb(134, 135, 135) 100%);
+    color: $primary-text-color;
+    z-index: 9;
+
+    &__img {
+      width: 300px;
+    }
+
+    &__Title {
+      &--sub {
+        font-weight: lighter;
+        color: $primary-text-color;
+      }
+
+      &--main {
+        font-weight: bold;
+      }
+    }
+
+    &__Description {
+      padding: 0 40px;
+      text-align: justify;
+    }
+
+    &__btns {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      z-index: 10;
+    }
+  }
+}

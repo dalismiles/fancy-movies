@@ -6,7 +6,7 @@ import UpcomingList from "../UpcomingList/";
 
 import { GET } from "../../utils/api";
 
-import "./index.css";
+import "./index.scss";
 
 const MainSection = () => {
   const [movieLists, setMovieLists] = useState({
@@ -40,7 +40,7 @@ const MainSection = () => {
   return (
     <div className="MainSection">
       <div className="MainSection__Card">
-        <p className="MainSection__text">top rated movie </p>
+        <p className="MainSection__Card--text">top rated movie </p>
         {movieLists.popular && (
           <MainCard
             cardData={movieLists.popular[0]}

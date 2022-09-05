@@ -5,7 +5,7 @@ import MainInput from "./components/MainInput";
 import MainSection from "./components/MainSection";
 import Navbar from "./components/Navbar";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [inputValue, setInputValue] = useState("");

@@ -1,7 +1,7 @@
 import Button from "../Button";
-import "./index.css";
+import "./index.scss";
 
-const Modal = ({ setModalVisibility, data }) => {
+const Modal = ({ data, setModalVisibility }) => {
   const onCancelBtn = () => {
     setModalVisibility(false);
   };
@@ -14,25 +14,24 @@ const Modal = ({ setModalVisibility, data }) => {
           src={`https://image.tmdb.org/t/p/w342${data.poster_path}`}
           alt={data.title}
         />
-        <div className="Modal__title">
-          <span className="Modal__TextContent--sub"> title: </span>
-          <span className="Modal__TextContent--title"> {data.title} </span>
+        <div className="Modal__Title">
+          <span className="Modal__Title--sub"> title: </span>
+          <span className="Modal__Title--main"> {data.title} </span>
         </div>
-        <div className="Modal__orTitle">
-          <span className="Modal__TextContent--sub">original title:</span>
-          <span className="Modal__TextContent--title">
+        <div className="Modal__Title">
+          <span className="Modal__Title--sub">original title:</span>
+          <span className="Modal__Title--main">
             {data.original_title}
           </span>
         </div>
-        <p className="Modal__TextContent--des"> {data.overview} </p>
-        <div className="Modal__btns">
-          <Button
-            onHandleClick={onCancelBtn}
-            btnTextContent="CLOSE"
-            color="lightgrey"
-            type="button"
-          />
-        </div>
+        <p className="Modal__Description"> {data.overview} </p>
+        <Button
+          onHandleClick={onCancelBtn}
+          btnTextContent="CLOSE"
+          color="rgb(38, 10, 59)"
+          type="button"
+          className="Modal__btns"
+        />
       </div>
     </div>
   );

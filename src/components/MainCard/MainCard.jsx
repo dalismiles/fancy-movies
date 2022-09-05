@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Modal from "../Modal/Modal";
-import "./index.css";
+import { memo, useState } from "react";
+import Modal from "../Modal";
+import "./index.scss";
 
 const MainCard = ({ cardData, cardStyle = {} }) => {
   const { original_title, title, vote_average, poster_path } = cardData;
@@ -14,7 +14,7 @@ const MainCard = ({ cardData, cardStyle = {} }) => {
       onClick={() => setModalVisibility(true)}
     >
       <img
-        className="MainCard--img"
+        className="MainCard__img"
         src={`https://image.tmdb.org/t/p/w342${poster_path}`}
         alt={title}
       />
@@ -23,10 +23,10 @@ const MainCard = ({ cardData, cardStyle = {} }) => {
         <p>{vote_average}</p>
       </div>
       {isModalVisible && (
-        <Modal setModalVisibility={setModalVisibility} data={cardData} />
+        <Modal data={cardData} setModalVisibility={setModalVisibility} />
       )}
     </div>
   );
 };
 
-export default MainCard;
+export default memo(MainCard);
