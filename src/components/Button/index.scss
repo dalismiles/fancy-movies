@@ -1,12 +1,11 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
 
 .Button {
-  border: 0;
-  padding: 15px 25px;
+  @include button-element(200px, auto, 15px 25px, 0, 6px);
+
   font-weight: bold;
   color: $primary-text-color;
-  border-radius: 6px;
-  cursor: pointer;
 
   &:hover {
     filter: saturate(0.6);

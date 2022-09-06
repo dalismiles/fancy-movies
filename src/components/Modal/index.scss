@@ -1,36 +1,28 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
 
 .Modal__overlay {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  z-index: 3;
+  @include box-model(0, 0, 100vw, 100vh);
+  @include flex-element(row, center, center);
+  @include element-position(fixed, 0, auto, auto, 0, 3);
+
   background-color: $modal-bg-color;
 
   .Modal {
-    position: fixed;
-    width: 500px;
-    height: 800px;
-    padding: 0px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    @include box-model(0, 0 30px, 500px, 800px, 0, 8px);
+    @include flex-element(column, center, center, nowrap, 10px);
+    @include element-position(fixed, auto, auto, auto, auto, 9);
     box-shadow: 0 0 4px $modal-bg-color;
-    border-radius: 8px;
     background: $third-color;
-    background: linear-gradient(0deg, $third-color 0%, rgb(134, 135, 135) 100%);
+    background: linear-gradient(
+      0deg,
+      $third-color 0%,
+      $secondary-text-color 100%
+    );
     color: $primary-text-color;
-    z-index: 9;
 
     &__img {
-      width: 300px;
+      @include box-model(0, 0, 300px);
     }
 
     &__Title {
@@ -45,15 +37,13 @@
     }
 
     &__Description {
-      padding: 0 40px;
+      @include box-model(0, 10px 40px);
       text-align: justify;
     }
 
     &__btns {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      z-index: 10;
+      @include flex-element(row, center, stretch, nowrap, 10px);
+      @include element-position(static, auto, auto, auto, auto, 10);
     }
   }
 }

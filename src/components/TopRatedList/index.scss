@@ -1,17 +1,13 @@
+@import "../../styles/_mixins.scss";
+
 .TopRated__Container {
-  display: flex;
-  gap: 20px;
-  padding: 20px 0;
-  height: 320px;
+  @include box-model(0, 20px 0, auto, 320px, 0, 8px);
+  @include flex-element();
+
   overflow-x: auto;
-  border-radius: 8px;
 }
 
 .TopRated__List {
-  margin: 10px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  @include box-model(10px 0);
+  @include flex-element(row, center, center, wrap, 20px);
 }

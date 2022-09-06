@@ -1,23 +1,20 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
 
 .MainSection {
-  padding: 50px;
-  display: flex;
-  gap: 15px;
-  height: 100vh;
-  color: rgb(26, 0, 45);
+  @include box-model(0, 50px, auto, 100vh);
+  @include flex-element(row, flex-start, stretch, nowrap, 15px);
+
+  color: $primary-color;
   background: $fourth-color;
 
   &__Card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
+    @include box-model(0, 0, 40%);
+    @include flex-element(column, center, center);
 
     &--text {
-      margin: 0;
-      padding: 20px;
+      @include box-model(0, 20px);
+
       font-size: 1.5rem;
       font-weight: bold;
       text-transform: uppercase;
@@ -25,16 +22,12 @@
   }
 
   &__Lists {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    width: 60%;
+    @include box-model(0, 0, 60%);
+    @include flex-element(column, flex-start, center, nowrap, 30px);
   }
 
   &--topRated,
   &--upcoming {
-    display: flex;
-    flex-direction: row;
+    @include flex-element();
   }
 }

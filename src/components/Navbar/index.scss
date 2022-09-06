@@ -1,11 +1,12 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
 
 .Navbar {
-  display: flex;
-  justify-content: space-around;
+  @include box-model(0, 0, 100%);
+  @include flex-element(row, space-around);
+
   overflow: hidden;
   background-color: $secondary-color;
-  width: 100%;
 
   & a {
     float: left;
@@ -21,12 +22,11 @@
       color: $primary-color;
 
       & .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
+        @include box-model(0, 0, 100%);
+        @include element-position(fixed, 0);
 
         & .content {
-          padding-top: 60px;
+          @include box-model(0, 60px);
         }
       }
     }

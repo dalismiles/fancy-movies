@@ -10,8 +10,8 @@ body {
 }
 
 * {
-  --scrollbarBG: #dadbdb;
-  --thumbBG: rgb(26, 0, 45);;
+  --scrollbarBG: #d3d3d3;
+  --thumbBG: rgb(26, 0, 45);
 }
 *::-webkit-scrollbar {
   width: 11px;
@@ -24,7 +24,7 @@ body {
   background: var(--scrollbarBG);
 }
 *::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG) ;
+  background-color: var(--thumbBG);
   border-radius: 6px;
   border: 3px solid var(--scrollbarBG);
 }

@@ -1,0 +1,74 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+
+.MovieEntity {
+  @include flex-element();
+
+  background-color: $primary-color;
+  color: $primary-text-color;
+  text-transform: uppercase;
+
+  &__info {
+    @include box-model(0, 20px, 22%);
+    @include flex-element(column, space-between, flex-end);
+
+    &--title {
+      transform: translate(100px, 120px);
+
+      & h1 {
+        font-size: 4rem;
+      }
+    }
+
+    &--bottom {
+      @include box-model(0, 0, 100%);
+      @include element-position(relative);
+      align-items: baseline;
+      font-weight: bold;
+      font-size: 0.9rem;    
+
+      p:nth-child(1),
+      p:nth-child(3) {
+        color: $secondary-text-color;
+      }
+
+      ul {
+        padding: 0;
+        list-style-type: none;
+      }
+
+      &--tagline {
+        @include box-model(0, 0, auto, 300px);
+        @include element-position(absolute, 0, -20px);
+
+        writing-mode: vertical-rl;
+        font-size: 1.5rem;
+        font-weight: bold;
+        transform: translateY(-120px) rotate(180deg);
+      }
+    }
+  }
+
+  &__poster {
+    @include box-model(0, 0, 56%, 100vh);
+
+    object-fit: cover;
+  }
+
+  &__book {
+    @include box-model(0, 0, 22%);
+    @include flex-element(column-reverse);
+
+    &--btn {
+      @include button-element(200px, auto, 20px 30px);
+
+      box-shadow: $box-shadow;
+      transform: translate(-100px, -120px);
+
+      &:hover {
+        background-color: $primary-color;
+        color: $fourth-color;
+      }
+    }
+  }
+}
