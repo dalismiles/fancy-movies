@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ModalLogin from "../ModalLogin";
-import "./index.scss";
+
+import styles from "./index.module.scss";
 
 const Navbar = () => {
   const [isModalVisible, setModalVisibility] = useState(false);
@@ -10,22 +11,22 @@ const Navbar = () => {
   };
 
   return (
-    <div className="Navbar">
-      <div className="Navbar__menu--pages">
+    <div className={styles.Navbar}>
+      <div className={styles.menupages}>
         <a href="#">Movies</a>
         <a href="#">Tv Show</a>
         <a href="#movie-entity">Search</a>
       </div>
-      <div className="Navbar__menu--logout">
-        <a onClick={() => setModalVisibility(true)} className="profileSettings">
+      <div className={styles.menuLogOut}>
+        <a onClick={() => setModalVisibility(true)} className={styles.profileSettings}>
           LogIn/Settings
         </a>
-        <a className="account">
+        <a className={styles.account}>
           <b>HELLO {localStorage.getItem("username") || "anonymous"} !</b>
         </a>
         <a
           onClick={() => setModalVisibility(true) && removeUsername(true)}
-          className="logOut"
+          className={styles.logOut}
         >
           Log Out
         </a>

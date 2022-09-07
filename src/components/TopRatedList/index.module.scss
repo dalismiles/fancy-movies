@@ -1,13 +1,13 @@
 @import "../../styles/_mixins.scss";
 
-.TopRated__Container {
+.Container {
   @include box-model(0, 20px 0, auto, 320px, 0, 8px);
   @include flex-element();
 
   overflow-x: auto;
 }
 
-.TopRated__List {
+.List {
   @include box-model(10px 0);
   @include flex-element(row, center, center, wrap, 20px);
 }

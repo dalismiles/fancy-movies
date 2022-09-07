@@ -8,11 +8,11 @@
   color: $primary-color;
   background: $fourth-color;
 
-  &__Card {
+  .Card {
     @include box-model(0, 0, 40%);
     @include flex-element(column, center, center);
 
-    &--text {
+    .text {
       @include box-model(0, 20px);
 
       font-size: 1.5rem;
@@ -21,13 +21,13 @@
     }
   }
 
-  &__Lists {
+  .Lists {
     @include box-model(0, 0, 60%);
     @include flex-element(column, flex-start, center, nowrap, 30px);
   }
 
-  &--topRated,
-  &--upcoming {
+  .topRated,
+  .upcoming {
     @include flex-element();
   }
 }

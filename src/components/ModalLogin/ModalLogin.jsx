@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../Button";
-import "./index.scss";
+
+import styles from "./index.module.scss";
 
 const ModalLogin = ({ onHandleClick }) => {
   const [usernameInput, setUsernameInput] = useState("");
@@ -11,20 +12,15 @@ const ModalLogin = ({ onHandleClick }) => {
   };
 
   return (
-    <div className="ModalLogin__overlay">
-      <div className="ModalLogin__overlay--content">
-        <h2 className="ModalLogin__overlay--content--typewriter">
-          WELCOME to MOVIE DB!
-        </h2>
-        <form
-          className="ModalLogin__overlay--content--form"
-          onSubmit={onGetUsername}
-        >
+    <div className={styles.ModalLoginOverlay}>
+      <div className={styles.content}>
+        <h2 className={styles.typewriter}>WELCOME to MOVIE DB!</h2>
+        <form className={styles.form} onSubmit={onGetUsername}>
           <label htmlFor="">Type your name here and continue...</label>
           <input
             value={usernameInput}
             onChange={(e) => setUsernameInput(e.target.value)}
-            className="ModalLogin__form--input"
+            className={styles.input}
             type="text"
             required
           />
@@ -32,7 +28,7 @@ const ModalLogin = ({ onHandleClick }) => {
             type="submit"
             color="lightseagreen"
             btnTextContent="Continue"
-            className="ModalLogin__button"
+            className={styles.button}
           />
         </form>
       </div>

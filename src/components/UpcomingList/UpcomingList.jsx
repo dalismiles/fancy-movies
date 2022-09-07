@@ -1,11 +1,12 @@
 import { memo } from "react";
 import MainCard from "../MainCard";
-import "./index.scss";
+
+import styles from "./index.module.scss";
 
 const UpcomingList = ({ cardData }) => {
   return (
-    <div className="Upcoming__Container">
-      <div className="Upcoming__List">
+    <div className={styles.Container}>
+      <div className={styles.List}>
         {cardData.map((item, index) => (
           <MainCard
             cardData={item}

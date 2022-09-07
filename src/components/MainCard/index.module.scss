@@ -14,7 +14,7 @@
     transform: scale(1.05);
   }
 
-  &__img {
+  .img {
     @include element-position(absolute, 0, 0);
     @include box-model(0, 0, 100%, 100%, 0, 15px);
 
@@ -22,7 +22,7 @@
     opacity: 0.7;
   }
 
-  &__text {
+  .text {
     @include box-model(0, 0 30px);
 
     h3 {

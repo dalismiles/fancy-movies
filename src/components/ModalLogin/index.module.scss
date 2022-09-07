@@ -1,14 +1,14 @@
 @import "../../styles/_variables.scss";
 @import "../../styles/_mixins.scss";
 
-.ModalLogin__overlay {
+.ModalLoginOverlay {
   @include box-model(0, 0, 100vw, 100vh);
   @include flex-element(row, center, center);
   @include element-position(fixed, 0, auto, auto, 0, 9);
 
   background-color: $modal-bg-color;
 
-  &--content {
+  .content {
     @include box-model(0, 20px, 500px, 200px, 0, 8px);
     @include flex-element(column, center, center, nowrap, 10px);
     @include element-position(fixed, calc(50% - 200px), auto, auto, auto, 9);
@@ -18,16 +18,16 @@
     background: linear-gradient(0deg, $third-color 0%, rgb(134, 135, 135) 100%);
     color: $primary-text-color;
 
-    &--form {
+    .form {
       @include flex-element(column, center, center, nowrap, 20px);
 
-      & input {
+      input {
         @include box-model(0, 10px 10px 10px 6px, 280px, auto, 0, 6px, none);
 
         font-weight: bold;
       }
 
-      & label {
+      label {
         @include box-model();
         font-weight: lighter;
         font-size: x-small;
@@ -37,7 +37,7 @@
   }
 }
 
-.ModalLogin__typewriter {
+.typewriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid whitesmoke; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */

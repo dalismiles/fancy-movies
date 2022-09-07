@@ -1,7 +1,7 @@
 @import "../../styles/_variables.scss";
 @import "../../styles/_mixins.scss";
 
-.Modal__overlay {
+.overlay {
   @include box-model(0, 0, 100vw, 100vh);
   @include flex-element(row, center, center);
   @include element-position(fixed, 0, auto, auto, 0, 3);
@@ -21,27 +21,27 @@
     );
     color: $primary-text-color;
 
-    &__img {
+    .img {
       @include box-model(0, 0, 300px);
     }
 
-    &__Title {
-      &--sub {
+    .Title {
+      .sub {
         font-weight: lighter;
         color: $primary-text-color;
       }
 
-      &--main {
+      .main {
         font-weight: bold;
       }
     }
 
-    &__Description {
+    .Description {
       @include box-model(0, 10px 40px);
       text-align: justify;
     }
 
-    &__btns {
+    .btns {
       @include flex-element(row, center, stretch, nowrap, 10px);
       @include element-position(static, auto, auto, auto, auto, 10);
     }

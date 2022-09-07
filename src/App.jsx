@@ -5,15 +5,15 @@ import MainInput from "./components/MainInput";
 import MainSection from "./components/MainSection";
 import Navbar from "./components/Navbar";
 
-import "./App.scss";
+import styles from "./App.module.scss";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Navbar />
-      <MainInput setInputMovie={setInputValue} />
+      <MainInput setInputValue={setInputValue} />
       <MainSection />
       <MovieEntity movieID={inputValue || "372058"} />
     </div>

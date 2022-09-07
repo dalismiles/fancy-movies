@@ -8,7 +8,7 @@
   overflow: hidden;
   background-color: $secondary-color;
 
-  & a {
+  a {
     float: left;
     display: block;
     color: $secondary-text-color;
@@ -32,7 +32,7 @@
     }
   }
 
-  &__menu--logout a {
+  .menuLogOut a {
     font-size: xx-small;
   }
 }

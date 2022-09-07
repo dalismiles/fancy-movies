@@ -1,5 +1,5 @@
 import Button from "../Button";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Modal = ({ data, setModalVisibility }) => {
   const onCancelBtn = () => {
@@ -7,30 +7,28 @@ const Modal = ({ data, setModalVisibility }) => {
   };
 
   return (
-    <div className="Modal__overlay">
-      <div className="Modal">
+    <div className={styles.overlay}>
+      <div className={styles.Modal}>
         <img
-          className="Modal__img"
+          className={styles.img}
           src={`https://image.tmdb.org/t/p/w342${data.poster_path}`}
           alt={data.title}
         />
-        <div className="Modal__Title">
-          <span className="Modal__Title--sub"> title: </span>
-          <span className="Modal__Title--main"> {data.title} </span>
+        <div className={styles.Title}>
+          <span className={styles.sub}> title: </span>
+          <span className={styles.main}> {data.title} </span>
         </div>
-        <div className="Modal__Title">
-          <span className="Modal__Title--sub">original title:</span>
-          <span className="Modal__Title--main">
-            {data.original_title}
-          </span>
+        <div className={styles.Title}>
+          <span className={styles.sub}>original title:</span>
+          <span className={styles.main}>{data.original_title}</span>
         </div>
-        <p className="Modal__Description"> {data.overview} </p>
+        <p className={styles.Description}> {data.overview} </p>
         <Button
           onHandleClick={onCancelBtn}
           btnTextContent="CLOSE"
           color="rgb(38, 10, 59)"
           type="button"
-          className="Modal__btns"
+          className={styles.btns}
         />
       </div>
     </div>

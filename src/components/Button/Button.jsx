@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Button = ({
   btnTextContent = "Click",
@@ -10,7 +10,7 @@ const Button = ({
     <button
       onClick={onHandleClick}
       type={type}
-      className="Button"
+      className={styles.Button}
       style={{ backgroundColor: color }}
     >
       {btnTextContent}

@@ -8,24 +8,23 @@
   color: $primary-text-color;
   text-transform: uppercase;
 
-  &__info {
+  .info {
     @include box-model(0, 20px, 22%);
     @include flex-element(column, space-between, flex-end);
 
-    &--title {
-      transform: translate(100px, 120px);
-
-      & h1 {
-        font-size: 4rem;
+    .tagline {
+      h2 {
+        font-size: 3rem;
+        font-style: italic;
       }
     }
 
-    &--bottom {
+    .bottom {
       @include box-model(0, 0, 100%);
-      @include element-position(relative);
+      @include element-position(relative, 0, -50px);
       align-items: baseline;
       font-weight: bold;
-      font-size: 0.9rem;    
+      font-size: 0.9rem;
 
       p:nth-child(1),
       p:nth-child(3) {
@@ -37,9 +36,9 @@
         list-style-type: none;
       }
 
-      &--tagline {
+      .title {
         @include box-model(0, 0, auto, 300px);
-        @include element-position(absolute, 0, -20px);
+        @include element-position(absolute, 0, 50px);
 
         writing-mode: vertical-rl;
         font-size: 1.5rem;
@@ -49,17 +48,17 @@
     }
   }
 
-  &__poster {
+  .poster {
     @include box-model(0, 0, 56%, 100vh);
 
     object-fit: cover;
   }
 
-  &__book {
+  .book {
     @include box-model(0, 0, 22%);
     @include flex-element(column-reverse);
 
-    &--btn {
+    .btn {
       @include button-element(200px, auto, 20px 30px);
 
       box-shadow: $box-shadow;

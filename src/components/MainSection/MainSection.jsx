@@ -6,7 +6,7 @@ import UpcomingList from "../UpcomingList/";
 
 import { GET } from "../../utils/api";
 
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const MainSection = () => {
   const [movieLists, setMovieLists] = useState({
@@ -38,23 +38,23 @@ const MainSection = () => {
   }, [movieLists.topRated]);
 
   return (
-    <div className="MainSection">
-      <div className="MainSection__Card">
-        <p className="MainSection__Card--text">top rated movie </p>
+    <div className={styles.MainSection}>
+      <div className={styles.Card}>
+        <p className={styles.text}>top rated movie </p>
         {movieLists.popular && (
           <MainCard
             cardData={movieLists.popular[0]}
-            className="MainSection__Card--maincard"
+            className={styles.maincard}
           />
         )}
       </div>
-      <div className="MainSection__Lists">
-        <p className="MainSection__text">top rated movies of the month</p>
+      <div className={styles.Lists}>
+        <p className={styles.text}>top rated movies of the month</p>
         {movieLists.topRated && (
           <TopRatedList
             cardData={filteredTopRated}
             nCards={8}
-            className="MainSection__Lists--topRated"
+            className={styles.topRated}
           />
         )}
         <p className="MainSection__text">upcoming movies</p>
@@ -62,7 +62,7 @@ const MainSection = () => {
           <UpcomingList
             cardData={movieLists.upcoming}
             nCards={10}
-            className="MainSection__Lists--upcoming"
+            className={styles.upcoming}
           />
         )}
       </div>

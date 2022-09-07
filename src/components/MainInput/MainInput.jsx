@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import "./index.scss";
+import styles from "./index.module.scss";
 
-const MainInput = ({ setInputMovie }) => {
+const MainInput = ({ setInputValue }) => {
   const inputRef = useRef(null);
 
   const [isInputVisible, setInputVisibility] = useState(false);
@@ -20,11 +20,11 @@ const MainInput = ({ setInputMovie }) => {
   const onHandleSubmit = (e) => {
     console.log(e);
     e.preventDefault();
-    setInputMovie(e.target[0].value);
+    setInputValue(e.target[0].value);
   };
 
   return (
-    <form className="MainInput" onSubmit={onHandleSubmit}>
+    <form className={styles.MainInput} onSubmit={onHandleSubmit}>
       {isInputVisible && (
         <>
           <input ref={inputRef} type="text" />

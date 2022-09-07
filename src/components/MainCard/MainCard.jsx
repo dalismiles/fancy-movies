@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import Modal from "../Modal";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const MainCard = ({ cardData, cardStyle = {} }) => {
   const { original_title, title, vote_average, poster_path } = cardData;
@@ -10,16 +10,16 @@ const MainCard = ({ cardData, cardStyle = {} }) => {
   return (
     <>
       <div
-        className="MainCard"
+        className={styles.MainCard}
         style={cardStyle}
         onClick={() => setModalVisibility(true)}
       >
         <img
-          className="MainCard__img"
+          className={styles.img}
           src={`https://image.tmdb.org/t/p/w342${poster_path}`}
           alt={title}
         />
-        <div className="MainCard__text">
+        <div className={styles.text}>
           <h3 style={{ fontSize: cardStyle.fontSize }}>{original_title}</h3>
           <p>{vote_average}</p>
         </div>
