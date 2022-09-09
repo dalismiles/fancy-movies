@@ -27,8 +27,11 @@
       font-size: 0.9rem;
 
       p:nth-child(1),
-      p:nth-child(3) {
+      p:nth-child(3),
+      p:nth-child(5),
+      p:nth-child(7) {
         color: $secondary-text-color;
+        font-size: small;
       }
 
       ul {

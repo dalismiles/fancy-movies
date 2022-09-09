@@ -2,16 +2,37 @@
 @import "../../styles/_mixins.scss";
 
 .Navbar {
-  @include box-model(0, 0, 100%);
-  @include flex-element(row, space-around);
+  @include box-model(0, 30px, 100%);
+  @include flex-element(column, center, center);
+  @include element-position(relative);
 
   overflow: hidden;
+  background-image: url("../../images/moviesbg.jpg");
+  background-size: cover;
   background-color: $secondary-color;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(41, 32, 47, 0.63);
+  }
+
+  p {
+    @include flex-element(row, flex-start, center, nowrap, 10px);
+    position: relative;
+    color: $primary-text-color;
+    font-weight: bold;
+  }
+
   a {
+    position: relative;
     float: left;
     display: block;
-    color: $secondary-text-color;
+    color: $primary-text-color;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -31,8 +52,11 @@
       }
     }
   }
+  .menuLogOut {
+    position: relative;
 
-  .menuLogOut a {
-    font-size: xx-small;
+    a {
+      font-size: xx-small;
+    }
   }
 }

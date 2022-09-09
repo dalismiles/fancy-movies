@@ -7,3 +7,8 @@ const GET = async (type, specific, ext = "") => {
 };
 
 export { GET };
+
+// const GET = async( type, query ,page ) => {
+//   const res = await fetch(BASE_URL+type+'/'+API_KEY+'&with_genres=16&with_origin_country=JP'+query+'&page='+page);
+//   return await res.json();
+// }

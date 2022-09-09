@@ -1,5 +1,7 @@
 import { memo, useState } from "react";
+import { FaCaretSquareRight } from "react-icons/fa";
 import Modal from "../Modal";
+
 import styles from "./index.module.scss";
 
 const MainCard = ({ cardData, cardStyle = {} }) => {
@@ -20,8 +22,10 @@ const MainCard = ({ cardData, cardStyle = {} }) => {
           alt={title}
         />
         <div className={styles.text}>
-          <h3 style={{ fontSize: cardStyle.fontSize }}>{original_title}</h3>
-          <p>{vote_average}</p>
+        <p>
+          <FaCaretSquareRight/>
+        </p>
+          
         </div>
       </div>
       {isModalVisible && (

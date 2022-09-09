@@ -2,20 +2,16 @@
 @import "../../styles/_mixins.scss";
 
 .MainInput {
-  height: 40px;
-  display: flex;
-  position: fixed;
-  top: 40px;
-  left: calc(10%);
+  @include box-model(0, 0, auto, 40px, 0, 8px);
+  @include flex-element(row, center);
+  @include element-position(fixed, 40px, auto, auto, calc(70%), 1);
+
   box-shadow: $box-shadow;
-  border-radius: 8px;
   transition: all 0.35s;
-  z-index: 1;
 
   input {
-    padding-left: 14px;
-    width: 240px;
-    border: 0;
+    @include box-model(0, 0 0 0 14px, 240px, auto, 0);
+
     outline: none;
     font-weight: bold;
     border-top-left-radius: 8px;
@@ -23,12 +19,11 @@
   }
 
   button {
-    width: 100px;
-    border: 0;
+    @include button-element(100px);
+
     font-weight: bold;
     background-color: $fourth-color;
     border-left: 1px solid $primary-border-color;
-    cursor: pointer;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
   }

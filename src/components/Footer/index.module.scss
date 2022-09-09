@@ -1,0 +1,30 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_mixins.scss";
+
+.Footer {
+  @include box-model(0, 0, 100%, 150px);
+  @include flex-element(row, space-around, center, nowrap, 25px);
+
+  background-color: $secondary-color;
+  color: $primary-text-color;
+
+  h1 {
+    @include flex-element(row, flex-start, center, nowrap, 10px);
+
+    font-size: 15px;
+  }
+
+  .socialIcons {
+    @include flex-element(row, center, center, nowrap, 25px);
+
+    font-size: 20px;
+
+    a {
+      color: $primary-text-color;
+
+      &:hover {
+        color: $secondary-text-color;
+      }
+    }
+  }
+}

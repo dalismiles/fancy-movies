@@ -1,4 +1,8 @@
+@import "./styles/_variables.scss";
+@import "./styles/_mixins.scss";
+
 .App {
+  @include flex-element(column, center, center);
+
   font-family: Outfit;
 }
-

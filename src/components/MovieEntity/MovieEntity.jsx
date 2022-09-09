@@ -11,8 +11,15 @@ const MovieEntity = ({ movieID }) => {
     GET("movie", movieID).then((data) => setMovieData(data));
   }, [movieID]);
 
-  const { poster_path, original_title, genres, vote_average, tagline, title } =
-    movieData;
+  const {
+    poster_path,
+    original_title,
+    genres,
+    vote_average,
+    tagline,
+    title,
+    release_date,
+  } = movieData;
 
   return (
     <div className={styles.MovieEntity} id="movie-entity">
@@ -21,14 +28,21 @@ const MovieEntity = ({ movieID }) => {
           <h2>" {tagline} "</h2>
         </div>
         <div className={styles.bottom}>
-          <p>rating</p>
-          <p>{vote_average || "not found"}</p>
+          <p>original title</p>
+          <p> "{original_title}" </p>
           <p>genre</p>
           <ul>
             {genres &&
               genres.map((genre) => <li key={genre.id}>{genre.name}</li>)}
           </ul>
-          <p className={styles.title}>{title}</p>
+          <p>rating</p>
+          <p>⭐ {vote_average || "not found"}</p>
+          
+          <p>release date:</p>
+          <p>{release_date} </p>
+          <p className={styles.title}>
+            {title} 
+          </p>
         </div>
       </div>
       <img
