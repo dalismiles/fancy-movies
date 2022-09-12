@@ -4,7 +4,7 @@
 .MainCard {
   @include flex-element(column, center);
   @include element-position(relative);
-  @include box-model(0, 0, 400px, 600px, 0, 15px);
+  @include box-model(0, 0, auto, auto, 0, 15px);
 
   color: $primary-text-color;
   background-color: $secondary-color;
@@ -25,7 +25,7 @@
   .text {
     @include box-model(0, 0 30px);
     @include flex-element(row, flex-start);
-    @include element-position(relative, -130px, 15px);
+    @include element-position(relative, -25%);
 
     p {
       @include flex-element(row, center, center, nowrap, 6px);

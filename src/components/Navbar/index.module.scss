@@ -60,3 +60,55 @@
     }
   }
 }
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+  .Navbar {
+    @include box-model(0, 30px, 100%, 150px);
+    @include flex-element(row, space-around, center);
+
+    p {
+      @include flex-element(row, flex-start, center, wrap, 10px);
+      padding: 20px;
+      position: relative;
+      color: $primary-text-color;
+      background-color: $tertiary-text-color;
+      font-weight: bold;
+    }
+
+    a {
+      position: relative;
+      float: left;
+      display: block;
+      color: $primary-text-color;
+      background-color: $tertiary-text-color;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 0.8rem;
+
+      &:hover {
+        background-color: $primary-border-color;
+        color: $primary-color;
+
+        & .sticky {
+          @include box-model(0, 0, 100%);
+          @include element-position(fixed, 0);
+
+          & .content {
+            @include box-model(0, 60px);
+          }
+        }
+      }
+    }
+    .menuLogOut {
+      @include flex-element(column, flex-start, center, wrap, 2px);
+
+      position: relative;
+      background-color: $tertiary-text-color;
+
+      a {
+        font-size: xx-small;
+      }
+    }
+  }
+}

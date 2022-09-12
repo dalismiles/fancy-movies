@@ -5,7 +5,7 @@ import Modal from "../Modal";
 import styles from "./index.module.scss";
 
 const MainCard = ({ cardData, cardStyle = {} }) => {
-  const { original_title, title, vote_average, poster_path } = cardData;
+  const { title, poster_path } = cardData;
 
   const [isModalVisible, setModalVisibility] = useState(false);
 
@@ -22,10 +22,9 @@ const MainCard = ({ cardData, cardStyle = {} }) => {
           alt={title}
         />
         <div className={styles.text}>
-        <p>
-          <FaCaretSquareRight/>
-        </p>
-          
+          <p>
+            <FaCaretSquareRight />
+          </p>
         </div>
       </div>
       {isModalVisible && (

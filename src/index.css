@@ -15,11 +15,11 @@ body {
 }
 
 * {
-  --scrollbarBG: #d3d3d3;
-  --thumbBG: rgb(26, 0, 45);
+  --scrollbarBG: rgb(26, 0, 45);
+  --thumbBG: rgb(72, 3, 3);
 }
 *::-webkit-scrollbar {
-  width: 11px;
+  width: 7px;
 }
 * {
   scrollbar-width: thin;

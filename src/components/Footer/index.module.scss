@@ -2,29 +2,80 @@
 @import "../../styles/_mixins.scss";
 
 .Footer {
-  @include box-model(0, 0, 100%, 150px);
-  @include flex-element(row, space-around, center, nowrap, 25px);
+  @include box-model(0, 10px 5px, 100%, 150px);
+  @include flex-element(column, space-around, center, nowrap, 0.4rem);
 
-  background-color: $secondary-color;
+  background-color: $third-color;
   color: $primary-text-color;
 
-  h1 {
-    @include flex-element(row, flex-start, center, nowrap, 10px);
+  .links {
+    @include box-model(0, 0, 100%);
+    @include flex-element(row, space-between);
 
-    font-size: 15px;
-  }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
 
-  .socialIcons {
-    @include flex-element(row, center, center, nowrap, 25px);
+      li {
+        font-size: 0.5rem;
+        list-style-type: none;
 
-    font-size: 20px;
-
-    a {
-      color: $primary-text-color;
-
-      &:hover {
-        color: $secondary-text-color;
+        &:hover {
+          color: $tertiary-text-color;
+        }
       }
     }
   }
+
+  .main {
+    @include box-model(0, 0, 100%);
+    @include flex-element(row, space-around, center);
+
+    h1 {
+      @include flex-element(row, flex-start, center, nowrap, 0.4rem);
+
+      font-size: 0.6rem;
+    }
+
+    .socialIcons {
+      @include flex-element(row, center, center, nowrap, 0.8rem);
+
+      font-size: 1.2rem;
+
+      a {
+        color: $primary-text-color;
+
+        &:hover {
+          color: $secondary-text-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+
+ .Footer {
+    @include box-model(0, 10px 5px, 100%, 150px);
+    @include flex-element(row, space-around, center, nowrap, 0.4rem);
+  
+    .links {
+      @include box-model(0, 0, 100%);
+      @include flex-element(row, space-around);
+  
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+    }
+  
+    .main {
+      @include box-model(0, 0, 100%);
+      @include flex-element(column, center, center, nowrap, 30px);
+  
+    }
+  }
+
 }

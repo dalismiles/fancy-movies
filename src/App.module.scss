@@ -3,6 +3,9 @@
 
 .App {
   @include flex-element(column, center, center);
+  width: 100%;
+  height: 100%;
 
   font-family: Outfit;
+  background-color: $primary-color;
 }

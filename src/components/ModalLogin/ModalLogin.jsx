@@ -12,12 +12,12 @@ const ModalLogin = ({ onHandleClick }) => {
   };
 
   return (
-    <div className={styles.ModalLoginOverlay}>
+    <div className={styles.ModalLogin}>
       <div className={styles.content}>
-        <h2 className={styles.typewriter}>WELCOME to MOVIE DB!</h2>
+        <h2 className={styles.welcome}>WELCOME to MOVIE DB!</h2>
         <form className={styles.form} onSubmit={onGetUsername}>
-          <label htmlFor="">Type your name here and continue...</label>
           <input
+            placeholder="Type your name here and continue..."
             value={usernameInput}
             onChange={(e) => setUsernameInput(e.target.value)}
             className={styles.input}
@@ -26,7 +26,7 @@ const ModalLogin = ({ onHandleClick }) => {
           />
           <Button
             type="submit"
-            color="lightseagreen"
+            color="red"
             btnTextContent="Continue"
             className={styles.button}
           />

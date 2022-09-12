@@ -10,7 +10,7 @@ const UpcomingList = ({ cardData }) => {
         {cardData.map((item, index) => (
           <MainCard
             cardData={item}
-            cardStyle={{ width: "200px", height: "310px", fontSize: "16px" }}
+            cardStyle={{ width: '170px', height: "220px" }}
             key={index}
           />
         ))}

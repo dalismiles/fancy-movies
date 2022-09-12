@@ -4,7 +4,7 @@
 .MainInput {
   @include box-model(0, 0, auto, 40px, 0, 8px);
   @include flex-element(row, center);
-  @include element-position(fixed, 40px, auto, auto, calc(70%), 1);
+  @include element-position(fixed, 40px, auto, auto, calc(6%), 10);
 
   box-shadow: $box-shadow;
   transition: all 0.35s;
@@ -14,8 +14,6 @@
 
     outline: none;
     font-weight: bold;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
   }
 
   button {
@@ -24,7 +22,32 @@
     font-weight: bold;
     background-color: $fourth-color;
     border-left: 1px solid $primary-border-color;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+  .MainInput {
+    @include box-model(0, 0, auto, 30px, 0, 8px);
+    @include flex-element(row, center);
+    @include element-position(fixed, 38px, auto, auto, calc(2.7%), 10);
+
+    box-shadow: $box-shadow;
+    transition: all 0.35s;
+
+    input {
+      @include box-model(0, 0 0 0 14px, 240px, auto, 0);
+
+      outline: none;
+      font-weight: bold;
+    }
+
+    button {
+      @include button-element(100px);
+
+      font-size: xx-small;
+      font-weight: bold;
+      background-color: $fourth-color;
+      border-left: 1px solid $primary-border-color;
+    }
   }
 }

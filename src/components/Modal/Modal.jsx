@@ -26,7 +26,7 @@ const Modal = ({ data, setModalVisibility }) => {
         <Button
           onHandleClick={onCancelBtn}
           btnTextContent="CLOSE"
-          color="rgb(38, 10, 59)"
+          color="red"
           type="button"
           className={styles.btns}
         />

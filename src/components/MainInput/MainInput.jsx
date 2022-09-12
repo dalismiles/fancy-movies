@@ -8,13 +8,10 @@ const MainInput = ({ setInputValue }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      window.scrollY >= 900
+      window.scrollY >= 880
         ? setInputVisibility(true)
         : setInputVisibility(false)
     );
-
-    // console.log(inputRef.current.value)
-    // inputRef.current.focus()
   }, []);
 
   const onHandleSubmit = (e) => {

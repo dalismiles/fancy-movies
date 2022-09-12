@@ -2,49 +2,57 @@
 @import "../../styles/_mixins.scss";
 
 .MainSection {
-  @include box-model(0, 0, auto, 100vh);
+  @include box-model(0, 0, 100%, 100vh);
   @include flex-element(column, center);
 
   color: $primary-color;
   background: $primary-color;
 
-  // .Card {
-  //   @include box-model(0, 0, 40%);
-  //   @include flex-element(column, center, center);
-
-  //   .text {
-  //     @include box-model(0, 20px);
-
-  //     font-size: 1.5rem;
-  //     font-weight: bold;
-  //     text-transform: uppercase;
-  //   }
-
-  //   .maincard {
-  //     @include box-model(0, 0, 900px);
-  //   }
-  // }
-
   .Lists {
-    @include box-model(0, 0, 100%);
+    @include box-model(70px 0, 0, 100%,95%);
     @include flex-element(column, center, flex-start, nowrap, 20px);
 
     .text {
-      // @include box-model(0 0 0 20px, 20px);
+      @include box-model(10px 0 20px, 0, 100%);
 
-      color: $tertiary-text-color;
-      font-weight: bold;
+      font-size: smaller;
       text-transform: uppercase;
-      width: 100%;
       text-align: center;
+      font-weight: bold;
+      color: $primary-text-color;
       border-bottom: 1px solid $tertiary-text-color;
       line-height: 0.1em;
-      margin: 10px 0 20px;
 
       .span {
-        background: $primary-color;
         padding: 0 10px;
+        background: $primary-color;
       }
     }
   }
+}
+
+@media screen and (min-width: 376px) and (max-width:1024px) {
+
+  .MainSection {
+    @include box-model(0, 0, 100%);
+    @include flex-element(column, center);
+  
+    .Lists {
+      @include box-model(70px 0, 0, 100%);
+      @include flex-element(column, center, flex-start, nowrap, 20px);
+  
+      .text {
+        @include box-model(10px 0 20px, 0, 100%);
+        font-size: smaller;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      color: $primary-text-color;
+      border-bottom: 1px solid $tertiary-text-color;
+      line-height: 0.1em;
+  
+      }
+    }
+  }
+
 }

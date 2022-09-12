@@ -1,75 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap");
+
 @import "../../styles/_variables.scss";
 @import "../../styles/_mixins.scss";
 
 .MovieEntity {
-  @include flex-element();
+  @include box-model(0, 0, 100%);
+  @include flex-element(column, center, center);
 
   background-color: $primary-color;
   color: $primary-text-color;
   text-transform: uppercase;
 
-  .info {
-    @include box-model(0, 20px, 22%);
-    @include flex-element(column, space-between, flex-end);
+  .movie {
+    @include box-model(0, 0, 100%);
+    @include flex-element(column, center, center);
 
-    .tagline {
-      h2 {
-        font-size: 3rem;
-        font-style: italic;
-      }
-    }
+    // .tagline {
+    //   visibility: hidden;
+    // @include box-model(0, 0 50px, 100%);
+    // h2 {
+    //   font-family: "Ms Madi", cursive;
+    //   font-size: 1.2rem;
+    //   text-transform: none;
+    // }
+    // }
 
-    .bottom {
+    .info {
       @include box-model(0, 0, 100%);
-      @include element-position(relative, 0, -50px);
-      align-items: baseline;
-      font-weight: bold;
-      font-size: 0.9rem;
+      @include flex-element(column, center, center, nowrap, 6px);
 
-      p:nth-child(1),
-      p:nth-child(3),
-      p:nth-child(5),
-      p:nth-child(7) {
-        color: $secondary-text-color;
-        font-size: small;
+      .poster {
+        @include box-model(0, 10px 0 20px, 60%, 50%);
+
+        object-fit: cover;
       }
 
-      ul {
-        padding: 0;
-        list-style-type: none;
-      }
+      .detailedInfo {
+        @include box-model(0, 0, 30%);
+        @include flex-element(column, center, center, nowrap, 6px);
+        @include element-position(relative, 0);
 
-      .title {
-        @include box-model(0, 0, auto, 300px);
-        @include element-position(absolute, 0, 50px);
-
-        writing-mode: vertical-rl;
-        font-size: 1.5rem;
+        align-items: baseline;
         font-weight: bold;
-        transform: translateY(-120px) rotate(180deg);
+        font-size: 0.7rem;
+
+        p:nth-child(2),
+        p:nth-child(4),
+        p:nth-child(6) {
+          color: $secondary-text-color;
+          font-size: 0.6rem;
+        }
+
+        ul {
+          padding: 0;
+          list-style-type: none;
+        }
       }
     }
   }
+  .btn {
+    @include button-element(200px, auto, 20px 30px);
 
-  .poster {
-    @include box-model(0, 0, 56%, 100vh);
+    box-shadow: $box-shadow;
 
-    object-fit: cover;
+    &:hover {
+      background-color: $primary-color;
+      color: $fourth-color;
+    }
   }
+}
 
-  .book {
-    @include box-model(0, 0, 22%);
-    @include flex-element(column-reverse);
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+  .MovieEntity {
+    @include box-model(0, 0, 400px);
+    @include flex-element();
+    .movie {
+      .info {
+        @include box-model();
+        @include flex-element(row, flex-start, center, nowrap, 20px);
 
-    .btn {
-      @include button-element(200px, auto, 20px 30px);
+        .poster {
+          @include box-model(0, 10px 0 20px, 600px, 300px);
+        }
 
-      box-shadow: $box-shadow;
-      transform: translate(-100px, -120px);
+        .detailedInfo {
+          @include box-model(0, 0, 30%);
+          @include flex-element(column, center, flex-start, nowrap, 15px);
+          @include element-position(relative, 0);
+        }
 
-      &:hover {
-        background-color: $primary-color;
-        color: $fourth-color;
+        .btn {
+          @include button-element(100px, auto, 10px 20px);
+          font-size: x-small;
+        }
       }
     }
   }

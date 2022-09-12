@@ -2,16 +2,17 @@
 @import "../../styles/_mixins.scss";
 
 .overlay {
-  @include box-model(0, 0, 100vw, 100vh);
+  @include box-model(0, 0, 100%, 100%);
   @include flex-element(row, center, center);
   @include element-position(fixed, 0, auto, auto, 0, 3);
 
   background-color: $modal-bg-color;
 
   .Modal {
-    @include box-model(0, 0 30px, 500px, 800px, 0, 8px);
+    @include box-model(0, 0 30px, 80%, 80%, 0, 8px);
     @include flex-element(column, center, center, nowrap, 10px);
     @include element-position(fixed, auto, auto, auto, auto, 9);
+
     box-shadow: 0 0 4px $modal-bg-color;
     background: $third-color;
     background: linear-gradient(
@@ -20,9 +21,12 @@
       $secondary-text-color 100%
     );
     color: $primary-text-color;
+    font-size: small;
 
     .img {
-      @include box-model(0, 0, 300px);
+      @include box-model(0, 0, 70%, 30%);
+
+      object-fit: contain;
     }
 
     .Title {
@@ -37,13 +41,49 @@
     }
 
     .Description {
-      @include box-model(0, 10px 40px);
+      @include box-model(0, 10px 20px);
       text-align: justify;
     }
 
     .btns {
       @include flex-element(row, center, stretch, nowrap, 10px);
       @include element-position(static, auto, auto, auto, auto, 10);
+    }
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 1024px) {
+  .overlay {
+    @include box-model(0, 0, 100%, 100%);
+    @include flex-element(row, center, center);
+    @include element-position(fixed, 0, auto, auto, 0, 3);
+
+    background-color: $modal-bg-color;
+
+    .Modal {
+      @include box-model(0, 40px 30px, 50%, 70%, 0, 8px);
+      @include flex-element(column, center, center, nowrap, 6px);
+      @include element-position(fixed, auto, auto, auto, auto, 9);
+      box-shadow: 0 0 4px $modal-bg-color;
+      background: $third-color;
+      background: linear-gradient(
+        0deg,
+        $third-color 0%,
+        $secondary-text-color 100%
+      );
+      color: $primary-text-color;
+      font-size: xx-small;
+
+      .img {
+        @include box-model(0, 0, 70%, 50%);
+
+        object-fit: contain;
+      }
+
+      .Description {
+        @include box-model(0, 10px 30px);
+        text-align: justify;
+      }
     }
   }
 }

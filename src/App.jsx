@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 
 import styles from "./App.module.scss";
 
-
 function App() {
   const [inputValue, setInputValue] = useState("");
 

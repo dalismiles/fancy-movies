@@ -1,13 +1,12 @@
 @import "../../styles/_mixins.scss";
 
 .Container {
-  @include box-model(0, 20px 0, auto, 320px, 0, 8px);
-  @include flex-element();
-
-  overflow-x: auto;
+  @include box-model(0, 0 20px, 100%, 320px, 0, 8px);
+  @include flex-element(row, center);
 }
 
 .List {
-  @include box-model(10px 0);
-  @include flex-element(row, center, center, wrap, 20px);
+  @include box-model(0, 0 20px, 90%, 100%);
+  @include flex-element(row, flex-start, center, nowrap, 30px);
+  overflow-x: auto;
 }
