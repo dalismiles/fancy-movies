@@ -7,8 +7,6 @@
   @include box-model(0, 0, 100%);
   @include flex-element(column, center, center);
 
-  background-color: $primary-color;
-  color: $primary-text-color;
   text-transform: uppercase;
 
   .movie {

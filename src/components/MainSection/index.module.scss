@@ -5,9 +5,6 @@
   @include box-model(0, 0, 100%, 100vh);
   @include flex-element(column, center);
 
-  color: $primary-color;
-  background: $primary-color;
-
   .Lists {
     @include box-model(70px 0, 0, 100%,95%);
     @include flex-element(column, center, flex-start, nowrap, 20px);
